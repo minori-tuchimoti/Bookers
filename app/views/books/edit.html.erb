@@ -1,0 +1,22 @@
+<div>
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+</div>
+
+<h1>Editing Book</h1>
+
+<%= form_with model: @book do |f| %>
+
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+  
+  <%= f.submit 'Update Book' %>
+
+  
+<% end %>
+
+<%= link_to 'Show', controller: 'books', action: 'show', id: @book.id %>
+<%= link_to 'Back', controller: 'books', action: 'index' %>
